@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "hotbarreplace",
+  "version": "${version}",
+
+  "name": "HotbarReplace",
+  "description": "Replace blocks in your hotbar when you run out with blocks from your inventory",
+  "authors": [
+    "Adam Macdonald"
+  ],
+  "contact": {
+    "homepage": "https://theladpack.today/",
+    "sources": "https://theladpack.today/"
+  },
+
+  "license": "GPLv3",
+  "icon": "assets/hotbarreplace/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "today.theladpack.HotbarReplace.HotbarReplace"
+    ]
+  },
+  "mixins": [
+    "hotbarreplace.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.17",
+    "fabric-api": "*",
+    "minecraft": "~1.19.3",
+    "java": ">=17"
+  }
+}
