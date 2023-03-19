@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "today.theladpack.HotbarReplace.HotbarReplace"
+      "today.theladpack.hotbarreplace.HotbarReplace"
     ]
   },
   "mixins": [

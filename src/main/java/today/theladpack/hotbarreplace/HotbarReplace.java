@@ -1,4 +1,4 @@
-package today.theladpack.HotbarReplace;
+package today.theladpack.hotbarreplace;
 
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
