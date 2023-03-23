@@ -9,8 +9,8 @@
     "Adam Macdonald"
   ],
   "contact": {
-    "homepage": "https://theladpack.today/",
-    "sources": "https://theladpack.today/"
+    "homepage": "https://twokilohertz.github.io/",
+    "sources": "https://twokilohertz.github.io/"
   },
 
   "license": "GPLv3",
@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "today.theladpack.hotbarreplace.HotbarReplace"
+      "io.github.twokilohertz.HotbarReplace"
     ]
   },
   "mixins": [
