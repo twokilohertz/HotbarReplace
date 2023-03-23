@@ -9,8 +9,9 @@
     "Adam Macdonald"
   ],
   "contact": {
-    "homepage": "https://twokilohertz.github.io/",
-    "sources": "https://twokilohertz.github.io/"
+    "homepage": "https://github.com/twokilohertz/HotbarReplace",
+    "sources": "https://github.com/twokilohertz/HotbarReplace",
+    "issues": "https://github.com/twokilohertz/HotbarReplace/issues"
   },
 
   "license": "GPLv3",
