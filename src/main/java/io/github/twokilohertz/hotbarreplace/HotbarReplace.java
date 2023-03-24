@@ -52,10 +52,12 @@ public class HotbarReplace implements ModInitializer {
                 if (client != null) {
                     client.interactionManager.clickSlot(player.currentScreenHandler.syncId, i, GLFW.GLFW_MOUSE_BUTTON_1, SlotActionType.PICKUP, player);
 
-                    // Wait 50 seconds (on another thread) before attempting to move the new stack
-                    // The magic number 36 is the offset to get the hotbar slotId
+                    /*
+                     Wait 50 seconds (on another thread) before attempting to move the new stack
+                     PlayerInventory.MAIN_SIZE added to the selected slot (hotbar slot) is the correct slot ID
+                    */
                     scheduler.schedule(() -> {
-                        client.interactionManager.clickSlot(player.currentScreenHandler.syncId, inventory.selectedSlot + 36, GLFW.GLFW_MOUSE_BUTTON_1, SlotActionType.PICKUP, player);
+                        client.interactionManager.clickSlot(player.currentScreenHandler.syncId, inventory.selectedSlot + PlayerInventory.MAIN_SIZE, GLFW.GLFW_MOUSE_BUTTON_1, SlotActionType.PICKUP, player);
                     }, 50, TimeUnit.MILLISECONDS);
                 }
 
