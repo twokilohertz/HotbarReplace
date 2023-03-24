@@ -20,7 +20,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.twokilohertz.HotbarReplace"
+      "io.github.twokilohertz.hotbarreplace.HotbarReplace"
     ]
   },
   "mixins": [

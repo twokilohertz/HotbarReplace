@@ -23,7 +23,7 @@ public class HotbarReplace implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        LOGGER.info("HotbarReplace initialised");
+        LOGGER.info("HotbarReplace v0.1.1 initialised");
     }
 
     public static void tryReplaceSlot(ItemPlacementContext context, Item item) {
