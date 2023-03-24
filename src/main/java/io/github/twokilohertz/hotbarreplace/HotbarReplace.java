@@ -1,4 +1,4 @@
-package io.github.twokilohertz;
+package io.github.twokilohertz.hotbarreplace;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
