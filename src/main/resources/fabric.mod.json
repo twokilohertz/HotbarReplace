@@ -14,7 +14,7 @@
     "issues": "https://github.com/twokilohertz/HotbarReplace/issues"
   },
 
-  "license": "GPLv3",
+  "license": "MIT",
   "icon": "assets/hotbarreplace/icon.png",
 
   "environment": "*",
