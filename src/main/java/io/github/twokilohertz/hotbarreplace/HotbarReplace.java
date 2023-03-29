@@ -6,7 +6,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
 import net.minecraft.screen.slot.SlotActionType;
 import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
@@ -23,7 +22,7 @@ public class HotbarReplace implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        LOGGER.info("HotbarReplace v0.1.1 initialised");
+        LOGGER.info("HotbarReplace v0.1.2 initialised");
     }
 
     public static void tryReplaceSlot(ItemPlacementContext context, Item item) {
@@ -41,13 +40,12 @@ public class HotbarReplace implements ModInitializer {
         // Return if the inventory is empty
         if (inventory.isEmpty()) return;
 
-        // Attempt to find a stack of matching items
-        for (int i = 0; i < inventory.main.size(); i++) {
-            if (i == inventory.selectedSlot) continue;
+        // If current screen handler is null, return
+        if (player.currentScreenHandler == null) return;
 
-            ItemStack stack = inventory.main.get(i);
-
-            if (stack.isOf(item)) {
+        // Attempt to find a stack of matching items in the player's inventory
+        for (int i = 0; i < player.currentScreenHandler.slots.size(); i++) {
+            if (player.currentScreenHandler.slots.get(i).getStack().isOf(item)) {
                 // Simulate moving the stack from one slot to another
                 if (client != null) {
                     client.interactionManager.clickSlot(player.currentScreenHandler.syncId, i, GLFW.GLFW_MOUSE_BUTTON_1, SlotActionType.PICKUP, player);
