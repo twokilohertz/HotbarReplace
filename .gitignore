@@ -3,9 +3,13 @@
 
 # Ignore Gradle build output directory
 build/
+bin/
 
 # Ignore run directory
 run/
 
 # IntelliJ IDEA
 .idea/
+
+# Gradle wrapper binaries
+gradle/wrapper/
