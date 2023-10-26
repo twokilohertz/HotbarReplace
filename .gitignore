@@ -13,3 +13,6 @@ run/
 
 # Gradle wrapper binaries
 gradle/wrapper/
+
+# Remapped source file directory
+remappedSrc/
