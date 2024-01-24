@@ -18,13 +18,16 @@ public class BlockItemMixin {
     private void BlockItem_place_head(ItemPlacementContext context, CallbackInfoReturnable<ActionResult> info) {
         lastPlacedItem = context.getStack().getItem();
     }
+
     @Inject(at = @At("TAIL"), method = "Lnet/minecraft/item/BlockItem;place(Lnet/minecraft/item/ItemPlacementContext;)Lnet/minecraft/util/ActionResult;")
     private void mixin_BlockItem_place_tail(ItemPlacementContext context, CallbackInfoReturnable<ActionResult> info) {
         // Early return if the block place action would fail
-        if (info.getReturnValue() != ActionResult.SUCCESS) return;
+        if (info.getReturnValue() != ActionResult.SUCCESS)
+            return;
 
         // Check if the stack is not empty, return if so
-        if (context.getStack().getCount() != 0) return;
+        if (context.getStack().getCount() != 0)
+            return;
 
         // Try to replace the hotbar slot
         HotbarReplace.tryReplaceSlot(context, lastPlacedItem);

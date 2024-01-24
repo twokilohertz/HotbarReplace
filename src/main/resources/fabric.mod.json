@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "hotbarreplace",
   "version": "${version}",
-
   "name": "HotbarReplace",
   "description": "Replace blocks in your hotbar when you run out with blocks from your inventory",
   "authors": [
@@ -13,10 +12,8 @@
     "sources": "https://github.com/twokilohertz/HotbarReplace",
     "issues": "https://github.com/twokilohertz/HotbarReplace/issues"
   },
-
   "license": "MIT",
   "icon": "assets/hotbarreplace/icon.png",
-
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -26,9 +23,8 @@
   "mixins": [
     "hotbarreplace.mixins.json"
   ],
-
   "depends": {
-    "fabricloader": ">=0.14.21",
+    "fabricloader": ">=0.15.6",
     "fabric-api": "*",
     "minecraft": "~1.20",
     "java": ">=17"
