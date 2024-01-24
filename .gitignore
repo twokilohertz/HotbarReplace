@@ -11,8 +11,5 @@ run/
 # IntelliJ IDEA
 .idea/
 
-# Gradle wrapper binaries
-gradle/wrapper/
-
 # Remapped source file directory
 remappedSrc/
