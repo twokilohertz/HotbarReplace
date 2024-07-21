@@ -53,20 +53,21 @@ public class HotbarReplace implements ClientModInitializer {
             if (player.currentScreenHandler.slots.get(i).getStack().isOf(item)) {
                 // Simulate moving the stack from one slot to another
                 if (client != null) {
+                    // TODO: This still feels like a bit of a hack
+                    // I honestly do not know Minecraft internals enough to be sure that there won't
+                    // be de-sync issues.
+
+                    int current_fps = client.getCurrentFps();
+                    int click_delay = Math.round(1.0f / (float) current_fps) * 1000;
+
                     client.interactionManager.clickSlot(player.currentScreenHandler.syncId, i, GLFW.GLFW_MOUSE_BUTTON_1,
                             SlotActionType.PICKUP, player);
 
-                    /*
-                     * Wait 50 milliseconds (on another thread) before attempting to move the new
-                     * stack
-                     * PlayerInventory.MAIN_SIZE added to the selected slot (hotbar slot) is the
-                     * correct slot ID
-                     */
                     scheduler.schedule(() -> {
                         client.interactionManager.clickSlot(player.currentScreenHandler.syncId,
                                 inventory.selectedSlot + PlayerInventory.MAIN_SIZE, GLFW.GLFW_MOUSE_BUTTON_1,
                                 SlotActionType.PICKUP, player);
-                    }, 50, TimeUnit.MILLISECONDS);
+                    }, click_delay, TimeUnit.MILLISECONDS);
                 }
 
                 return;
