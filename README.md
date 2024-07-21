@@ -1,6 +1,6 @@
 ## HotbarReplace
 
-HotbarReplace is a Minecraft mod for the Fabric modding framework which replaces blocks in your hotbar with blocks of the same type from your inventory.
+HotbarReplace is a Minecraft mod for the Fabric modding framework which replaces blocks in your hotbar with blocks of the same type from your inventory upon running out while placing, see demo GIF below to see how it works!
 
 ### Known issues/Improvements
 
