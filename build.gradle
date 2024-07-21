@@ -19,8 +19,8 @@ loom {
 
     mods {
         "hotbarreplace" {
-            sourceSet sourceSets.main
-            // sourceSet sourceSets.client
+            // sourceSet sourceSets.main
+            sourceSet sourceSets.client
         }
     }
 
