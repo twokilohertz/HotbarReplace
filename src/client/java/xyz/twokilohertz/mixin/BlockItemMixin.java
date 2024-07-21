@@ -1,4 +1,4 @@
-package io.github.twokilohertz.hotbarreplace.mixin;
+package xyz.twokilohertz.mixin;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import io.github.twokilohertz.hotbarreplace.HotbarReplace;
+import xyz.twokilohertz.HotbarReplace;
 
 @Mixin(BlockItem.class)
 public class BlockItemMixin {

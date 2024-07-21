@@ -1,6 +1,6 @@
-package io.github.twokilohertz.hotbarreplace;
+package xyz.twokilohertz;
 
-import net.fabricmc.api.ModInitializer;
+import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -15,13 +15,13 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class HotbarReplace implements ModInitializer {
+public class HotbarReplace implements ClientModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("hotbarreplace");
     private static final MinecraftClient client = MinecraftClient.getInstance();
     private static final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
     @Override
-    public void onInitialize() {
+    public void onInitializeClient() {
         LOGGER.info("HotbarReplace v0.1.2 initialised");
     }
 
@@ -31,7 +31,7 @@ public class HotbarReplace implements ModInitializer {
         if (player.isSpectator())
             return;
 
-        // Creative inventories don't run out of anyway
+        // Creative inventories don't run out of blocks anyway
         if (player.getAbilities().creativeMode)
             return;
 

@@ -14,19 +14,22 @@
   },
   "license": "MIT",
   "icon": "assets/hotbarreplace/icon.png",
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
-    "main": [
-      "io.github.twokilohertz.hotbarreplace.HotbarReplace"
+    "client": [
+      "xyz.twokilohertz.HotbarReplace"
     ]
   },
   "mixins": [
-    "hotbarreplace.mixins.json"
+    {
+      "config": "hotbarreplace.mixins.json",
+      "environment": "client"
+    }
   ],
   "depends": {
-    "fabricloader": ">=0.15.6",
-    "fabric-api": "*",
-    "minecraft": "~1.20",
-    "java": ">=17"
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~1.21",
+    "java": ">=21",
+    "fabric-api": "*"
   }
 }
