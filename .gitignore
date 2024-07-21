@@ -4,6 +4,9 @@
 # VSCode stuff
 .vscode/
 
+# Dolphin stuff
+.directory
+
 # Gradle project-specific cache directory
 .gradle/
 
