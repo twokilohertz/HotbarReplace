@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "hotbarreplace",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "name": "HotbarReplace",
   "description": "Replace blocks in your hotbar when you run out with blocks from your inventory",
   "authors": [

@@ -22,7 +22,7 @@ public class HotbarReplace implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        LOGGER.info("HotbarReplace v0.1.2 initialised");
+        LOGGER.info("HotbarReplace v0.1.3 initialised");
     }
 
     public static void tryReplaceSlot(ItemPlacementContext context, Item item) {
