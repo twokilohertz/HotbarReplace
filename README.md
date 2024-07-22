@@ -6,7 +6,7 @@ HotbarReplace is a Minecraft mod for the Fabric modding framework which replaces
 
 ### Known issues/Improvements
 
-* Make the mod more resilient to network delay and packet loss (don't hardcode a 50 ms delay)
+* [You tell me!](https://github.com/twokilohertz/HotbarReplace/issues) I'd like to see this mod be as simple & bug-free as possible!
 
 ### Where to find it?
 
