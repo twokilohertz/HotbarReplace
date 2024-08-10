@@ -2,11 +2,11 @@
   "required": true,
   "package": "xyz.twokilohertz.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [
-    "MinecartItemMixin"
-  ],
+  "mixins": [],
   "client": [
-    "BlockItemMixin"
+    "BlockItemMixin",
+    "BoneMealItemMixin",
+    "MinecartItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1
