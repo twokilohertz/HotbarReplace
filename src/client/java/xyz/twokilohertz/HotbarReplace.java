@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.slot.SlotActionType;
+import net.minecraft.util.Hand;
 import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +26,7 @@ public class HotbarReplace implements ClientModInitializer {
         LOGGER.info("HotbarReplace v0.1.3 initialised");
     }
 
-    public static void tryReplaceSlot(ItemPlacementContext context, Item item) {
+    public static void tryReplaceSlot(ItemPlacementContext context, Item item, Hand hand) {
         // Return immediately if player is a spectator
         PlayerEntity player = context.getPlayer();
         if (player.isSpectator())
@@ -63,9 +64,16 @@ public class HotbarReplace implements ClientModInitializer {
                     client.interactionManager.clickSlot(player.currentScreenHandler.syncId, i, GLFW.GLFW_MOUSE_BUTTON_1,
                             SlotActionType.PICKUP, player);
 
+                    int slot;
+                    if (hand == Hand.OFF_HAND) {
+                        slot = 9;
+                    } else {
+                        slot = inventory.selectedSlot;
+                    }
+
                     scheduler.schedule(() -> {
                         client.interactionManager.clickSlot(player.currentScreenHandler.syncId,
-                                inventory.selectedSlot + PlayerInventory.MAIN_SIZE, GLFW.GLFW_MOUSE_BUTTON_1,
+                                slot + PlayerInventory.MAIN_SIZE, GLFW.GLFW_MOUSE_BUTTON_1,
                                 SlotActionType.PICKUP, player);
                     }, click_delay, TimeUnit.MILLISECONDS);
                 }

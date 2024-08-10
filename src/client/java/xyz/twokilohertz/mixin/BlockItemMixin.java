@@ -9,6 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import xyz.twokilohertz.HotbarReplace;
+import net.minecraft.util.Hand;
 
 @Mixin(BlockItem.class)
 public class BlockItemMixin {
@@ -30,6 +31,6 @@ public class BlockItemMixin {
             return;
 
         // Try to replace the hotbar slot
-        HotbarReplace.tryReplaceSlot(context, lastPlacedItem);
+        HotbarReplace.tryReplaceSlot(context, lastPlacedItem, context.getHand());
     }
 }
