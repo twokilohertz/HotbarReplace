@@ -30,6 +30,6 @@ public class BlockItemMixin {
             return;
 
         // Try to replace the hotbar slot
-        HotbarReplace.tryReplaceSlot(context, lastPlacedItem);
+        HotbarReplace.tryReplaceSlot(context, lastPlacedItem, context.getHand());
     }
 }
