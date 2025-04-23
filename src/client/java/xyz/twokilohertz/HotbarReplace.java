@@ -65,7 +65,7 @@ public class HotbarReplace implements ClientModInitializer {
 
                     scheduler.schedule(() -> {
                         client.interactionManager.clickSlot(player.currentScreenHandler.syncId,
-                                inventory.selectedSlot + PlayerInventory.MAIN_SIZE, GLFW.GLFW_MOUSE_BUTTON_1,
+                                inventory.getSelectedSlot() + PlayerInventory.MAIN_SIZE, GLFW.GLFW_MOUSE_BUTTON_1,
                                 SlotActionType.PICKUP, player);
                     }, click_delay, TimeUnit.MILLISECONDS);
                 }

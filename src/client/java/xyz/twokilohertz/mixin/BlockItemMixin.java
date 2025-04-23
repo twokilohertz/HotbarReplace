@@ -20,7 +20,7 @@ public class BlockItemMixin {
     }
 
     @Inject(at = @At("TAIL"), method = "Lnet/minecraft/item/BlockItem;place(Lnet/minecraft/item/ItemPlacementContext;)Lnet/minecraft/util/ActionResult;")
-    private void mixin_BlockItem_place_tail(ItemPlacementContext context, CallbackInfoReturnable<ActionResult> info) {
+    private void BlockItem_place_tail(ItemPlacementContext context, CallbackInfoReturnable<ActionResult> info) {
         // Early return if the block place action would fail
         if (info.getReturnValue() != ActionResult.SUCCESS)
             return;
