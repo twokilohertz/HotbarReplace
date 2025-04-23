@@ -9,8 +9,6 @@ on:
 jobs:
   build:
     runs-on: archlinux-latest
-    permissions:
-      contents: read
 
     steps:
       - name: Install prerequisite packages
